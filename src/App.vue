@@ -156,9 +156,6 @@ body{
   background: #009237;
 }
 
-// .el-menu-demo{
-//   float: right;
-// }
 .el-menu-demo li a{
   text-decoration: none;
 }
