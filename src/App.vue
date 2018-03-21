@@ -1,9 +1,56 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
+      <el-header height="194px">
+        <div class="head-top">
+          <div class="site-logo fl">
+            <a href="#">
+              <h1 class="site-name">惠农网</h1>
+              <img src="./assets/layout/logo.jpg" alt="惠农网" width="388" height="123">
+            </a>
+          </div>
+          <div class="site-search ri">
+            <div>
+              <el-input placeholder="请输入内容" v-model="input1" class="input-with-select">
+                <el-select v-model="select" slot="prepend" placeholder="供应大厅" class="search-select">
+                  <el-option label="采供大厅" value="1"></el-option>
+                  <el-option label="市场行情" value="2"></el-option>
+                  <el-option label="农业资讯" value="3"></el-option>
+                </el-select>
+                <el-button slot="append" icon="el-icon-search"></el-button>
+              </el-input>
+            </div>
+          </div>
+        </div>
+        <div class="head-nav">
+          <el-menu
+            :default-active="activeIndex1"
+            class="el-menu-demo"
+            mode="horizontal"
+            @select="handleSelect"
+            background-color="#009237"
+            text-color="#fff"
+            active-text-color="#ffd04b">
+            <el-menu-item index="1"><a href="#" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="2"><a href="#" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="3"><a href="#" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="4"><a href="#" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="5"><a href="#" target="_blank">订单管理</a></el-menu-item>
+            <el-menu-item index="6"><a href="#" target="_blank">订单管理</a></el-menu-item>
+          </el-menu>
+        </div>
+        
+      </el-header>
+      <el-main>
+        <div class="main-slide">
+          <el-carousel :interval="5000" arrow="hover" height="400px">
+            <el-carousel-item v-for="item in 4" :key="item">
+              <h3>{{ item }}</h3>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
+      </el-main>
+      <el-footer>&copy; 惠农网</el-footer>
     </el-container>
   </div>
 </template>
@@ -11,32 +58,132 @@
 <script>
 import 'normalize.css'
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+      return {
+        activeIndex1: '1',
+        input1: '',
+        select: ''
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
+.el-header, .el-main, .el-footer{
+  padding: 0;
+}
+
+.el-header, .el-footer {
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-main {
+  background-color: #E9EEF3;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+  height: 500px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+// base
+body{
+  background: #fff;
+}
+.fl{
+  float: left;
+}
+.ri{
+  float: right;
+}
+
+// container
+.el-container{
+  width: 1190px;
+  min-width: 1190px;
+  margin: 0 auto;
+}
+/* header */
+.head-top{
+    width: 1190px;
+    min-width: 1190px;
+    height: 133px;
+    margin: 0 auto;
+  .site-logo{
+    height: 123px;
+    line-height: 123px;
+    padding: 5px 0 5px 10px;
+    overflow: hidden;
+    h1{
+      display: none;
+      position: absolute;
+      text-indent: -9999px;
+    }
   }
-  
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
+
+  .site-search{
+   width: 360px;
+   height: 123px;
+   margin-right: 18px; 
+   line-height: 123px;
+   font-size: 14px;
+   display: inline;
+   .search-select{
+     width: 106px;
+   }
   }
-  
-  body > .el-container {
-    margin-bottom: 40px;
-  }
+}
+
+.head-nav{
+  height: 61px;
+  background: #009237;
+}
+
+// .el-menu-demo{
+//   float: right;
+// }
+.el-menu-demo li a{
+  text-decoration: none;
+}
+
+// main
+.main-slide{
+  height: 400px;
+}
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 18px;
+  opacity: 0.75;
+  line-height: 400px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
+}
+
+.el-footer{
+  background: #cecece;
+}
 </style>
