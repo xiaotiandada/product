@@ -23,7 +23,8 @@
           </div>
         </div>
         <div class="head-nav">
-          <el-menu
+          <div class="head-nav-context">
+            <el-menu
             :default-active="activeIndex1"
             class="el-menu-demo"
             mode="horizontal"
@@ -37,18 +38,16 @@
             <el-menu-item index="4"><a href="#" target="_blank">订单管理</a></el-menu-item>
             <el-menu-item index="5"><a href="#" target="_blank">订单管理</a></el-menu-item>
             <el-menu-item index="6"><a href="#" target="_blank">订单管理</a></el-menu-item>
-          </el-menu>
+           </el-menu>
+          </div>
+          
         </div>
         
       </el-header>
       <el-main>
-        <div class="main-slide">
-          <el-carousel :interval="5000" arrow="hover" height="400px">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <h3>{{ item }}</h3>
-            </el-carousel-item>
-          </el-carousel>
-        </div>
+        <!-- <keep-view> -->
+          <router-view></router-view>
+        <!-- </keep-view> -->
       </el-main>
       <el-footer>&copy; 惠农网</el-footer>
     </el-container>
@@ -79,6 +78,8 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  position: relative;
 }
 
 .el-header, .el-main, .el-footer{
@@ -97,7 +98,7 @@ export default {
   color: #333;
   text-align: center;
   line-height: 160px;
-  height: 500px;
+  // height: 500px;
 }
 
 body > .el-container {
@@ -116,8 +117,9 @@ body{
 
 // container
 .el-container{
-  width: 1190px;
-  min-width: 1190px;
+  // width: 1190px;
+  // min-width: 1190px;
+  width: 100%;
   margin: 0 auto;
 }
 /* header */
@@ -155,30 +157,18 @@ body{
   height: 61px;
   background: #009237;
 }
-
+.head-nav-context{
+  width: 1190px;
+  min-width: 1190px;
+  margin: 0 auto;
+}
 .el-menu-demo li a{
   text-decoration: none;
 }
 
 // main
-.main-slide{
-  height: 400px;
-}
-.el-carousel__item h3 {
-  color: #475669;
-  font-size: 18px;
-  opacity: 0.75;
-  line-height: 400px;
-  margin: 0;
-}
 
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
 
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #d3dce6;
-}
 
 .el-footer{
   background: #cecece;
