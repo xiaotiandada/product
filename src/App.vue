@@ -98,7 +98,6 @@ export default {
   color: #333;
   text-align: center;
   line-height: 160px;
-  // height: 500px;
 }
 
 body > .el-container {

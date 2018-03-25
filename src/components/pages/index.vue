@@ -2,7 +2,7 @@
     <div class="main-index">
         <div class="category">
             <div class="label">
-               <dl class="cate-01">
+               <!-- <dl class="cate-01">
                    <dt>
                        <h3>
                          <a href="#">水果</a>
@@ -12,7 +12,21 @@
                         <a href="#">核果仁果类</a>
                         <a href="#">浆果类</a>
                    </dd>
+               </dl> -->
+                <dl v-for="(item, index) in list" :class="'cate-0'+ index">
+                   <dt>
+                       <h3>
+                           <a href="#">{{item.title}}</a>
+                       </h3>
+                   </dt>
+                   <dd>
+                       <a href="#" v-for="items in item.titleChild">{{items}}</a>
+                   </dd>
                </dl>
+            </div>
+
+            <div class="panel">
+                
             </div>
         </div>
         <div class="slidew">
@@ -55,6 +69,64 @@ export default {
                 name: 'four',
                 url: 'http://a.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327b260b83a9d8fa0ec08fac72e.jpg'
             }
+        ],
+        list: [
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            },
+            {   
+                title: '水果',
+                titleChild: [
+                    '核桃仁果类',
+                    '浆果类'
+                ]
+            }
         ]
     }
   }
@@ -68,6 +140,7 @@ export default {
     min-width: 1190px;
     height: 455px;
     margin: 0 auto;
+    position: relative;
 }
 .category{
     float: left;
@@ -83,38 +156,100 @@ export default {
     }
 }
  .label dl{
-        padding: 8px 10px 8px 48px;
-        border-bottom: 1px solid #eee;
-        cursor: default;
-        background: url(../../assets/sprite/bg-index-page.png) no-repeat;
-        background-position: -252px 18px !important;
-        margin: 0;
-        dt{
-            position: relative;
-            font-size: 16px;
-            h3{
-                font-size: 100%;
-                font-weight: normal;
-                margin: 0;
-                a{
-                    text-decoration: none;
-                    color: #000;
-                }
-            }
-        }
-        dd{
-            height: 20px;
-            overflow: hidden;
-            a{
-                color: #666;
-                text-decoration: none;
-            }
-        }
+    padding: 8px 10px 8px 48px;
+    border-bottom: 1px solid #eee;
+    cursor: default;
+    background: url(../../assets/sprite/bg-index-page.png) no-repeat;
+    background-position: -252px 18px;
+    margin: 0;
 }
 
-.cate-01{
+ .label dl dt{
+    position: relative;
+    font-size: 16px;
+    h3{
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        a{
+            text-decoration: none;
+            color: #000;
+            text-align: left;
+            padding: 0;
+            position: relative;
+            display: inline;
+            &::before,&::after{
+                position: absolute;
+                content: ' ';
+                display: block;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                top: 4px;
+            }
+            &::after{
+                right: -18px;
+                border-left-color: #f8f8f8;
+            }
+            &::before{
+                right: -20px;
+                border-left-color: #b2b2b2;
+            }
+        }
+    }
+ }
+ .label dl dd{
+    height: 20px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    a{
+        color: #666;
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 0;
+        text-align: left;
+    }
+ }
+.cate-00{
     background-position: -252px -35px !important;
 }
+.cate-01{
+    background-position: -252px -379px !important;
+}
+.cate-02{
+    background-position: -252px -92px !important;
+}
+.cate-03{
+    background-position: -252px -149px !important;
+}
+.cate-04{
+    background-position: -252px -208px !important;
+}
+.cate-05{
+    background-position: -252px -263px !important;
+}
+.cate-06{
+    background-position: -252px -321px !important;
+}
+.cate-07{
+    background-position: -252px -35px !important;
+}
+
+.panel{
+    position: absolute;
+    width: 768px;
+    // min-width: 453px;
+    height: 453px;
+    top: 0;
+    left: 200px;
+    margin-left: -2px;
+    border: 1px solid #dcdcdc;
+    background: #eee;
+    overflow: hidden;
+}
+
 .slidew{
     float: left;
     width: 750px;
