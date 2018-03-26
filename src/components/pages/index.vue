@@ -13,7 +13,7 @@
                         <a href="#">浆果类</a>
                    </dd>
                </dl> -->
-                <dl v-for="(item, index) in list" :class="'cate-0'+ index">
+                <dl v-for="(item, index) in leftMenu" :class="'cate-0'+ index">
                    <dt>
                        <h3>
                            <a href="#">{{item.title}}</a>
@@ -26,7 +26,41 @@
             </div>
 
             <div class="panel">
-                
+                <div class="item">
+                    <div class="sub-cate">
+                        <!-- <dl>
+                            <dt>
+                               <h3>
+                                <a href="#">
+                                    核果仁果类
+                                </a>
+                            </h3> 
+                            </dt>
+                            <dd>
+                                <h3>
+                                    <a href="#">苹果</a>
+                                </h3>
+                            </dd>
+                        </dl>   -->
+
+
+                        <dl v-for="item in leftMenuItem">
+                            <dt>
+                                <h3>
+                                    <a href="#">
+                                        {{item.title}}
+                                    </a>
+                                </h3>
+                            </dt>
+                            <dd>
+                                <h3>
+                                    <a href="#" v-for="items in item.titleChild">{{items}}</a>
+                                </h3>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="sub-rcmd"></div>
+                </div>
             </div>
         </div>
         <div class="slidew">
@@ -70,7 +104,7 @@ export default {
                 url: 'http://a.hiphotos.baidu.com/image/pic/item/10dfa9ec8a136327b260b83a9d8fa0ec08fac72e.jpg'
             }
         ],
-        list: [
+        leftMenu: [
             {   
                 title: '水果',
                 titleChild: [
@@ -127,6 +161,50 @@ export default {
                     '浆果类'
                 ]
             }
+        ],
+        leftMenuItem: [
+            {
+                title: '核桃仁果类',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            },
+            {
+                title: '热带水果',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            },
+            {
+                title: '柑橘类',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            },
+            {
+                title: '浆果类',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            },
+            {
+                title: '瓜果类',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            },
+            {
+                title: '苗木',
+                titleChild: [
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                ]
+            }
         ]
     }
   }
@@ -138,7 +216,7 @@ export default {
 .main-index{
     width: 1190px;
     min-width: 1190px;
-    height: 455px;
+    height: 800px;
     margin: 0 auto;
     position: relative;
 }
@@ -148,12 +226,12 @@ export default {
     text-align: left;
     font-size: 12px;
     z-index: 998;
-    .label{
-        width: 198px;
-        border: 1px solid #eee;
-        line-height: 20px;
-        background: #f8f8f8;
-    }
+}
+.label{
+    width: 198px;
+    border: 1px solid #eee;
+    line-height: 20px;
+    background: #f8f8f8;
 }
  .label dl{
     padding: 8px 10px 8px 48px;
@@ -240,8 +318,8 @@ export default {
 .panel{
     position: absolute;
     width: 768px;
-    // min-width: 453px;
-    height: 453px;
+    min-width: 453px;
+    // height: 453px;
     top: 0;
     left: 200px;
     margin-left: -2px;
@@ -249,7 +327,81 @@ export default {
     background: #eee;
     overflow: hidden;
 }
-
+.panel .item{
+    zoom: 1;
+    overflow: hidden;
+    .sub-cate{
+        float: left;
+        width: 550px;
+        margin: 20px 0;
+        padding: 0 0 0 10px;
+    }
+}
+.panel .sub-cate dl{
+    margin-bottom: 10px;
+    overflow: hidden;
+    line-height: 2em;
+    dt{
+        position: relative;
+        float: left;
+        width: 88px;
+        padding: 8px 30px 0 0;
+        text-align: right;
+        font-size: 14px;
+        h3{
+            font-size: 100%;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+            a{
+                color: #009234;
+                text-decoration: none;
+                &::before,&::after{
+                position: absolute;
+                content: ' ';
+                display: block;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+                top: 14px;
+                }
+                &::after{
+                    right: 16px;
+                    border-left-color: #eeeeef;
+                }
+                &::before{
+                    right: 14px;
+                    border-left-color: #b2b2b2;
+                }
+            }
+        }
+    }
+    dd{
+        float: left;
+        width: 380px;
+        padding: 6px 0;
+        border-top: 1px solid #eee;
+        margin: 0;
+        h3{
+            font-size: 100%;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+            a{
+                color: #666;
+                text-decoration: none;
+                float: left;
+                padding: 0 8px;
+                margin: 6px 0;
+                line-height: 14px;
+                height: 14px;
+                border-left: 1px solid #e0e0e0;
+                white-space: nowrap;
+                display: inline;
+            }
+        }
+    }
+}
 .slidew{
     float: left;
     width: 750px;

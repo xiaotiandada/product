@@ -23,7 +23,7 @@ export default {
     }
   },
    mounted () {
-        console.log(this.slidewList)
+        // console.log(this.slidewList)
     }
 }
 </script>
