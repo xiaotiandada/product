@@ -13,7 +13,7 @@
                         <a href="#">浆果类</a>
                    </dd>
                </dl> -->
-                <dl v-for="(item, index) in leftMenu" :class="'cate-0'+ index">
+                <dl v-for="(item, index) in leftMenu" :class="'cate-0'+ index" @mouseover="overShow" @mouseout="outHide">
                    <dt>
                        <h3>
                            <a href="#">{{item.title}}</a>
@@ -26,48 +26,53 @@
             </div>
 
             <div class="panel">
-                <div class="item">
-                    <div class="sub-cate">
-                        <!-- <dl>
-                            <dt>
-                               <h3>
+                <template v-for="item in leftMenuItems">
+                        <div class="item" v-for="items in item.item" :class="{show:showItem,hide:hideItem}">
+                            <div class="sub-cate">
+                                <!-- <dl>
+                                    <dt>
+                                    <h3>
+                                        <a href="#">
+                                            核果仁果类
+                                        </a>
+                                    </h3> 
+                                    </dt>
+                                    <dd>
+                                        <h3>
+                                            <a href="#">苹果</a>
+                                        </h3>
+                                    </dd>
+                                </dl>   -->
+
+
+                                <dl>
+                                    <dt>
+                                        <h3>
+                                            <a href="#">
+                                                {{items.title}}
+                                            </a>
+                                        </h3>
+                                    </dt>
+                                    <dd>
+                                        <h3>
+                                            <a href="#" v-for="itemarr in items.titleChild">
+                                                {{itemarr}}
+                                            </a>
+                                        </h3>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="sub-rcmd">
                                 <a href="#">
-                                    核果仁果类
+                                    <img src="http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg" alt="汁多爽口">
                                 </a>
-                            </h3> 
-                            </dt>
-                            <dd>
-                                <h3>
-                                    <a href="#">苹果</a>
-                                </h3>
-                            </dd>
-                        </dl>   -->
-
-
-                        <dl v-for="item in leftMenuItem">
-                            <dt>
-                                <h3>
-                                    <a href="#">
-                                        {{item.title}}
-                                    </a>
-                                </h3>
-                            </dt>
-                            <dd>
-                                <h3>
-                                    <a href="#" v-for="items in item.titleChild">{{items}}</a>
-                                </h3>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="sub-rcmd">
-                        <a href="#">
-                            <img src="http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg" alt="汁多爽口">
-                        </a>
-                        <a href="#">
-                            <img src="http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg" alt="汁多爽口">
-                        </a>
-                    </div>
-                </div>
+                                <a href="#">
+                                    <img src="http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg" alt="汁多爽口">
+                                </a>
+                            </div>
+                        </div>
+                </template>
+                
             </div>
         </div>
         <div class="slidew">
@@ -89,6 +94,8 @@ export default {
   },
   data () {
     return {
+        showItem: true,
+        hideItem: false,
         slidewList: [
             {   
                 index: '1',
@@ -169,51 +176,70 @@ export default {
                 ]
             }
         ],
-        leftMenuItem: [
+        leftMenuItems: [
             {
-                title: '核桃仁果类',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                ]
-            },
-            {
-                title: '热带水果',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                ]
-            },
-            {
-                title: '柑橘类',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                ]
-            },
-            {
-                title: '浆果类',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                ]
-            },
-            {
-                title: '瓜果类',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                ]
-            },
-            {
-                title: '苗木',
-                titleChild: [
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                    '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                item: [
+                    {
+                        title: '核桃仁果类1',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    },
+                    {
+                        title: '核桃仁果类',
+                        titleChild: [
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
+                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ]
+                    }
                 ]
             }
         ]
     }
+  },
+  methods: {
+      overShow(){
+          console.log(1)
+      },
+      outHide(){
+          console.log(2)
+      }
   }
 }
 </script>
@@ -247,6 +273,18 @@ export default {
     background: url(../../assets/sprite/bg-index-page.png) no-repeat;
     background-position: -252px 18px;
     margin: 0;
+    &:hover{
+        background-color: #eee;
+        border: 1px solid #dcdcdc;
+        border-right-color: #eee;
+        margin-top: -1px;
+        margin-left: -1px;
+        z-index: 999;
+        position:relative;
+    }
+    &:hover dt a:after{
+        border-left-color: #eee;
+    }
 }
 
  .label dl dt{
@@ -322,6 +360,12 @@ export default {
     background-position: -252px -35px !important;
 }
 
+.show{
+    display: block !important;
+}
+.hide{
+    display: none !important;
+}
 .panel{
     position: absolute;
     width: 768px;
@@ -337,6 +381,7 @@ export default {
 .panel .item{
     zoom: 1;
     overflow: hidden;
+    display: none;
     .sub-cate{
         float: left;
         width: 550px;
