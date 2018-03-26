@@ -59,7 +59,14 @@
                             </dd>
                         </dl>
                     </div>
-                    <div class="sub-rcmd"></div>
+                    <div class="sub-rcmd">
+                        <a href="#">
+                            <img src="http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg" alt="汁多爽口">
+                        </a>
+                        <a href="#">
+                            <img src="http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg" alt="汁多爽口">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -402,6 +409,24 @@ export default {
         }
     }
 }
+.panel .sub-rcmd{
+    float: right;
+    width: 166px;
+    padding: 25px 30px 20px 10px;
+    overflow: hidden;
+    a{
+        display: block;
+        height: 134px;
+        margin-bottom: 5px;
+        padding: 0;
+        text-decoration: none;
+        img{
+            vertical-align: top;
+            border: 0;
+        }
+    }
+}
+
 .slidew{
     float: left;
     width: 750px;
