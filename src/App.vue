@@ -49,7 +49,7 @@
           <router-view></router-view>
         <!-- </keep-view> -->
       </el-main>
-      <el-footer>&copy; 惠农网</el-footer>
+      <el-footer class="footers">&copy; 惠农网</el-footer>
     </el-container>
   </div>
 </template>

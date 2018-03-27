@@ -249,7 +249,7 @@ export default {
 .main-index{
     width: 1190px;
     min-width: 1190px;
-    height: 800px;
+    height: 2000px;
     margin: 0 auto;
     position: relative;
 }
