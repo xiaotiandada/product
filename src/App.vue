@@ -81,6 +81,15 @@ export default {
 
   position: relative;
 }
+.clear{
+  display: block;
+  width: 0;
+  height: 0;
+  content: '';
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
 
 .el-header, .el-main, .el-footer{
   padding: 0;
@@ -94,10 +103,11 @@ export default {
 }
 
 .el-main {
-  background-color: #E9EEF3;
+  // background-color: #E9EEF3;
   color: #333;
   text-align: center;
   line-height: 160px;
+  overflow: visible;
 }
 
 body > .el-container {
