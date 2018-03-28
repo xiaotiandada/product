@@ -27,7 +27,7 @@
 
             <div class="panel">
                 <template v-for="item in leftMenuItems">
-                        <div class="item" v-for="items in item.item" :class="{show:showItem,hide:hideItem}">
+                        <div class="item" :class="{show:showItem,hide:hideItem}">
                             <div class="sub-cate">
                                 <!-- <dl>
                                     <dt>
@@ -49,13 +49,13 @@
                                     <dt>
                                         <h3>
                                             <a href="#">
-                                                {{items.title}}
+                                                {{item.title}}
                                             </a>
                                         </h3>
                                     </dt>
                                     <dd>
                                         <h3>
-                                            <a href="#" v-for="itemarr in items.titleChild">
+                                            <a href="#" v-for="itemarr in item.titleChild">
                                                 {{itemarr}}
                                             </a>
                                         </h3>
@@ -63,11 +63,8 @@
                                 </dl>
                             </div>
                             <div class="sub-rcmd">
-                                <a href="#">
-                                    <img src="http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg" alt="汁多爽口">
-                                </a>
-                                <a href="#">
-                                    <img src="http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg" alt="汁多爽口">
+                                <a href="#" v-for="itemsrc in item.titleSrc">
+                                    <img :src="itemsrc" alt="汁多爽口">
                                 </a>
                             </div>
                         </div>
@@ -177,59 +174,28 @@ export default {
             }
         ],
         leftMenuItems: [
-            {
-                item: [
                     {
                         title: '核桃仁果类1',
                         titleChild: [
                             '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
                             '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ],
+                        titleSrc : [
+                            'http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg',
+                            'http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg',
                         ]
                     },
                     {
-                        title: '核桃仁果类2',
+                        title: '核桃仁果类1',
                         titleChild: [
                             '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
                             '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                        ]
-                    },
-                    {
-                        title: '核桃仁果类3',
-                        titleChild: [
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                        ]
-                    },
-                    {
-                        title: '核桃仁果类',
-                        titleChild: [
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                        ]
-                    },
-                    {
-                        title: '核桃仁果类',
-                        titleChild: [
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                        ]
-                    },
-                    {
-                        title: '核桃仁果类',
-                        titleChild: [
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
-                        ]
-                    },
-                    {
-                        title: '核桃仁果类',
-                        titleChild: [
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果',
-                            '苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果','苹果'
+                        ],
+                        titleSrc : [
+                            'http://img.cnhnb.com/group1/M00/87/F9/225943R2A1ChRkRllDjgqAbCqNAABkzcbU5xs411.jpg',
+                            'http://img.cnhnb.com/group1/M00/87/F9/A9359EPA97ChRkRllDjmeAWpuRAAAe65c86FU842.jpg',
                         ]
                     }
-                ]
-            }
         ]
     }
   },
