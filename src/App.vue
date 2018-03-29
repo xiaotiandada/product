@@ -119,9 +119,11 @@ body{
 }
 .fl{
   float: left;
+  display: inline;
 }
 .ri{
   float: right;
+  display: inline;  
 }
 ul,ol,li{
   list-style: none;
