@@ -123,6 +123,9 @@ body{
 .ri{
   float: right;
 }
+ul,ol,li{
+  list-style: none;
+}
 
 // container
 .el-container{

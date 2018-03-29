@@ -15,6 +15,23 @@
             </div>
         </div>
         <div class="clear"></div>
+
+        <div class="pic-banner">
+            <ul class="clearfix">
+                <!-- <li class="first">
+                    <a href="">
+                        <img class="lazy" src="http://img.cnhnb.com/group1/M00/9B/34/313E86LE38ChRkRlpiyzGAYvm8AAA1PW3pK1o319.jpg" alt="">
+                    </a>
+                </li> -->
+                <template v-for="item in picbanner">
+                    <li :class="item.pic_class">
+                        <a :href="item.pic_href" :title="item.pic_title">
+                            <img :src="item.pic_src" :alt="item.pic_alt" class="lazy">
+                        </a>
+                    </li>
+                </template>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -336,6 +353,50 @@ export default {
                         ]
               
                     }
+        ],
+        picbanner:[
+            {   
+                pic_class: 'first',
+                pic_href: '#',
+                pic_title: 'picbanner1',
+                pic_alt: 'pic1',
+                pic_src: require('../../assets/picbanner/pic1.jpg')
+            },
+            {   
+                pic_class: '',
+                pic_href: '#',
+                pic_title: 'picbanner2',
+                pic_alt: 'pic2',
+                pic_src: require('../../assets/picbanner/pic2.jpg')
+            },
+            {   
+                pic_class: '',
+                pic_href: '#',
+                pic_title: 'picbanner3',
+                pic_alt: 'pic3',
+                pic_src: require('../../assets/picbanner/pic3.jpg')
+            },
+            {   
+                pic_class: '',
+                pic_href: '#',
+                pic_title: 'picbanner4',
+                pic_alt: 'pic4',
+                pic_src: require('../../assets/picbanner/pic4.jpg')
+            },
+            {   
+                pic_class: '',
+                pic_href: '#',
+                pic_title: 'picbanner5',
+                pic_alt: 'pic5',
+                pic_src: require('../../assets/picbanner/pic5.jpg')
+            },
+            {   
+                pic_class: 'last',
+                pic_href: '#',
+                pic_title: 'picbanner6',
+                pic_alt: 'pic6',
+                pic_src: require('../../assets/picbanner/pic6.jpg')
+            },
         ]
     }
   },
@@ -387,6 +448,77 @@ export default {
             overflow: hidden;
         }
     }
+}
+
+.pic-banner{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.pic-banner .clearfix{
+        margin: 0;
+        padding: 0;
+        zoom: 1;
+        &::after{
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: ".";
+            clear: both;
+            height: 0;
+        }
+        li{
+            float: left;
+            width: 195px;
+            display: inline;
+            margin: 0 2px;
+        }
+}
+
+.pic-banner .clearfix li a{
+    position: relative;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    &::before,
+    &::after
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: 0 -534px;
+        background: url(../../assets/sprite/bg-index-page.png) no-repeat;
+    }
+    &::after{
+        background-position: -78px -589px;
+    }
+    &::before{
+        background-position: -78px -589px;
+    }
+    img{
+        width: 100%;
+        height: 120px;
+        display: block;
+        vertical-align: top;
+        border: 0;
+    }
+}
+.pic-banner li:first-child{
+    margin-left: 0;
+}
+.first{
+    margin-left: 0;
+}
+.pic-banner li:last-child{
+    margin-right: 0;
+}
+.last{
+    margin-right: 0;
+}
+.lazy{
+    background: url(../../assets/layout/loading-64.gif) no-repeat;
 }
 </style>
 
