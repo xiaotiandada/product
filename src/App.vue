@@ -128,6 +128,9 @@ body{
 ul,ol,li{
   list-style: none;
 }
+.lazy{
+    background: url(./assets/layout/loading-64.gif) no-repeat;
+}
 
 // container
 .el-container{

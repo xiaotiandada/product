@@ -1,11 +1,13 @@
 <template>
-    <div class="main-slide">
-          <el-carousel :interval="5000" arrow="hover" height="440px">
+    <div class="slidew">
+        <div class="main-slide">
+            <el-carousel :interval="5000" arrow="hover" height="440px">
             <el-carousel-item v-for="item in slidewList" :key="item.index">
                 <img :src="item.url" :alt="item.name">
             </el-carousel-item>
-          </el-carousel>
+            </el-carousel>
         </div>
+    </div>
 </template>
 
 <script>
