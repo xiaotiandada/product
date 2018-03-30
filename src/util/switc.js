@@ -1,4 +1,6 @@
 $(function(){
+
+    // leftmenu
     $('.label dl').each(function(index){
         $(this).mouseover(function(){
             $(this).addClass('dlhover')
@@ -22,6 +24,17 @@ $(function(){
             $('.label dl:eq('+index+')').removeClass('dlhover')
             $('.panel').hide()
             $(this).hide()
+        })
+    })
+
+
+    //side-info
+    $('.sidetab').each(function(index){
+        $(this).mouseover(function(){
+            $('.sidetab').removeClass('selected')
+            $(this).addClass('selected')
+            $('.tab').removeClass('tabshow')
+            $('.tab').eq(index).addClass('tabshow')
         })
     })
 })
