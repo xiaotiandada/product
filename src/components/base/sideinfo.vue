@@ -19,73 +19,16 @@
                         <a href="#" class="sidetab">规则</a>
                     </li>
                 </ul>
-                <div class="tab tabshow">
-                    <ul class="list">
-                        <li>
-                            <a href="">【公告】“1类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab">
-                    <ul class="list">
-                        <li>
-                            <a href="">【公告】“2类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab">
-                    <ul class="list">
-                        <li>
-                            <a href="">【公告】“3类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab">
-                    <ul class="list">
-                        <li>
-                            <a href="">【公告】“4类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                        <li>
-                            <a href="">【公告】“类目结构”功能升级通知</a>
-                        </li>
-                    </ul>
-                </div>
+                <template   v-for="(item, index) in sideinfo">
+                    <div class="tab" :class="{'tabshow' : index==0?true:false}">
+                        <ul class="list">
+                            <li  v-for="itemarr in item">
+                                <a href="">{{itemarr}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+                
             </div>
         </div>
     </div>
@@ -94,12 +37,12 @@
 <script>
 export default {
   name: 'Sideinfo',
-//   props: {
-//       slidewList:{
-//           type: Array,
-//           default: []
-//       }
-//   },
+  props: {
+      sideinfo:{
+          type: Array,
+          default: []
+      }
+  },
   data () {
     return {
        
@@ -195,5 +138,9 @@ export default {
 }
 .tabshow{
     display: block !important;
+}
+
+.tab:nth-child(0){
+    display: block;
 }
 </style>
