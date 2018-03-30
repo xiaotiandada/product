@@ -6,7 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import $ from 'jquery'
-import './util/leftmenu'
+import './util/switc'
 
 Vue.use(ElementUI)
 

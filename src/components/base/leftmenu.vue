@@ -161,6 +161,9 @@ export default {
         margin-right: 10px;
         padding: 0;
         text-align: left;
+        &:hover{
+            color: #f57a11;
+        }
     }
  }
 .cate-00{
@@ -274,6 +277,9 @@ export default {
                 border-left: 1px solid #e0e0e0;
                 white-space: nowrap;
                 display: inline;
+                &:hover{
+                    color: #f57a11;
+                }
             }
         }
     }

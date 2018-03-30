@@ -49,7 +49,88 @@
           <router-view></router-view>
         <!-- </keep-view> -->
       </el-main>
-      <el-footer class="footers">&copy; 惠农网</el-footer>
+      <el-footer class="footers">
+        <div class="container">
+            <div class="quick-nav">
+                <ul class="icon">
+                <li class="i1">
+                    <img src="./assets/footer/quick-nav-icon-1.gif" alt="">
+                    <p>
+                    <a href="">资源多</a>
+                    <a href="">海量信息免费发</a>
+                    </p>
+                </li>
+                <li class="i1">
+                    <img src="./assets/footer/quick-nav-icon-2.gif" alt="">
+                    <p>
+                    <a href="">资源多</a>
+                    <a href="">海量信息免费发</a>
+                    </p>
+                </li>
+                <li class="i1">
+                    <img src="./assets/footer/quick-nav-icon-3.gif" alt="">
+                    <p>
+                    <a href="">资源多</a>
+                    <a href="">海量信息免费发</a>
+                    </p>
+                </li>
+                <li class="i1">
+                    <img src="./assets/footer/quick-nav-icon-4.gif" alt="">
+                    <p>
+                    <a href="">资源多</a>
+                    <a href="">海量信息免费发</a>
+                    </p>
+                </li>
+                </ul>
+            </div>
+            <div class="ptb">
+                <p>
+                <a href="">
+                    关于我们
+                </a>
+                |
+                <a href="">
+                    法律声明
+                </a>
+                |
+                <a href="">
+                    使用协议
+                </a>
+                |
+                <a href="">
+                    版权隐私
+                </a>
+                |
+                <a href="">
+                    友情链接
+                </a>
+                |
+                <a href="">
+                    成功案例
+                </a>
+                |
+                <a href="">
+                    惠农大事记
+                </a>
+                |
+                <a href="">
+                    产品库
+                </a>
+                |
+                <a href="">
+                    品种库
+                </a>
+                |
+                <a href="">
+                    网站地图
+                </a>
+                </p>
+                <p>湘ICP备13007354号-1  | 服务热线：400-008-8688</p>
+                <p>互联网药品信息服务资格证书:(湘)-经营性-2014-0005 湖南惠农科技有限公司</p>
+                <p>©2011-2018 Cnhnb B2B SYSTEM All Rights Reserved</p>
+            </div>
+        </div>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -187,7 +268,84 @@ ul,ol,li{
 
 
 
+// footer
 .el-footer{
-  background: #cecece;
+  min-width: 1190px;
+  padding: 0;
+  border-top: 1px solid #ddd;
+  clear: both;
+  background: #ddd;
+  height: 100% !important;
+}
+
+.container{
+  width: 1190px;
+  min-width: 1190px;
+  margin: 0 auto;
+}
+
+.container .quick-nav{
+  .icon{
+      padding: 20px 70px 10px;
+      line-height: 21px;
+      font-size: 16px;
+      color: #666;
+      overflow: hidden;
+      margin: 0;
+      zoom: 1;
+      li{
+        float: left;
+        padding: 0 40px;
+        img{
+          float: left;
+          display: block;
+          width: 54px;
+          height: 54px;
+          vertical-align: top;
+          border: 0;
+          -webkit-transition: transform 0.3s;
+          -moz-transition: transform 0.3s;
+          -ms-transition: transform 0.3s;
+          -o-transition: transform 0.3s;
+          transition: transform 0.3s;
+        }
+        &:hover img{
+          transform: rotate(30deg);
+        }
+
+        p{
+          float: left;
+          padding: 5px 8px;
+          cursor: default;
+          margin: 0;
+          a{
+            display: block;
+            white-space: nowrap;
+            color: #666;
+            text-decoration: none;
+            text-align: left;
+          }
+        }
+      }
+  }
+}
+
+.el-footer .container .ptb{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    p{
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      line-height: 2;
+      color: #666;      
+      a{
+        text-decoration: none;
+        color: #666;
+        &:hover{
+          color: #f57a11;
+        }
+      }
+    }
 }
 </style>
