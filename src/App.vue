@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header height="194px">
+      <el-header height="179px">
         <div class="head-top">
           <div class="site-logo fl">
             <a href="#">
@@ -24,6 +24,9 @@
         </div>
         <div class="head-nav">
           <div class="head-nav-context">
+            <div class="market">
+              <span>惠农市场</span>
+            </div>
             <el-menu
             :default-active="activeIndex1"
             class="el-menu-demo"
@@ -251,14 +254,42 @@ ul,ol,li{
   }
 }
 
+.market{
+  float: left;
+
+  width: 200px;
+  background: #0da944;
+  text-align: center;
+  color: #fff;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 46px;
+  span{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+}
 .head-nav{
-  height: 61px;
+  height: 46px;
   background: #009237;
 }
 .head-nav-context{
   width: 1190px;
   min-width: 1190px;
   margin: 0 auto;
+  overflow: hidden;
+}
+.el-menu{
+  float: left;
+  height: 45px;
+  .el-menu-item{
+    height: 45px;
+    line-height: 45px;
+  }
 }
 .el-menu-demo li a{
   text-decoration: none;
