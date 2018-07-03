@@ -2,10 +2,7 @@
 
 > A Vue.js project
 
-
-![img](doc/img/index.png)
-
-
+> 模仿农惠网用vue写了一个首页展示
 
 ## Build Setup
 
